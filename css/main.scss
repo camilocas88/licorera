@@ -1,0 +1,164 @@
+@import 'breackpoints';
+@import 'mixins';
+@import 'mobile';
+@import 'config';
+
+
+*{
+ margin: 0;
+ padding: 0;
+ font-family: 'Source Sans Pro', sans-serif;
+}
+
+a, ul{
+    text-decoration: none;
+    color: $primary-color;
+}
+
+li{
+    list-style: none;
+}
+body{
+    background-color: #F2F2F2;
+}
+
+header{
+    .numbers{
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 36px;
+        background: #888888;
+        color: white;
+
+        &__item{
+            color: white;
+            width: 33%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                height: 18px;
+                width: 18px;
+                margin: 0px 4px 0px 4px;
+            }
+
+            i, a{
+                margin: 0 5px;
+                color: white;
+            }
+        }
+
+        &__item--space{
+            display: none;
+
+            @include lg {
+                display: flex;
+                width: 65%;
+            }
+        }
+
+        &__bar{
+            color: white;
+            width: 1px;
+            height: 35px;
+            border: 0.5px solid white;
+            background: white;
+            
+        }
+    }
+
+    .menu{
+        background: white;
+
+        ul{
+            display: flex;
+        }
+
+        li{
+            text-align: center;
+
+            &.bar_li{
+                display: none;
+
+                @include md {
+                    display: flex;
+                }
+            }
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        span{
+            font-size: 9pt;
+            font-weight: 600;
+        }
+
+        
+
+        &__left{
+            
+            li{
+                padding: 17px 0px 17px 17px;
+
+                &:last-child{
+                    padding: 17px 5px 17px 15px;
+                }
+                
+            }
+
+            &--hide{
+                display: none;
+            }
+
+            &--item{
+                display: block;
+                text-align: center;
+                // justify-content: space-between;
+            }
+        }
+        &__center{
+            
+            img{
+                width: 160px;
+                margin: 7px 0px;
+            }
+            
+        }
+        &__right{
+            &--hide{
+                display: none;
+            }
+
+            ul{
+                justify-content: flex-end;
+            }
+
+            li{
+                padding: 17px 0px 17px 0px;
+
+                @include md{
+                    padding: 17px 14px 17px 0px;
+                }
+
+                &:last-child{
+                    padding: 17px 17px 17px 15px;
+                }
+            }
+
+            &--item{
+                display: block;
+                text-align: center;
+
+                @include md{
+                    display: unset;
+                }
+            }
+        }
+    }
+}
+
